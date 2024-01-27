@@ -68,8 +68,8 @@ export default function SignInSide() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 12, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
+            <Avatar sx={{ m: 8, bgcolor: 'black' , p: 3}}>
+              <LockOutlinedIcon/>
             </Avatar>
             <Typography component="h1" variant="h5">
               Sign in
@@ -103,7 +103,7 @@ export default function SignInSide() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 4, mb: 9, p:1 }}
               >
                 Sign In
               </Button>
@@ -119,7 +119,7 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 32 }} />
+              <Copyright sx={{ mt: 28 }} />
             </Box>
           </Box>
         </Grid>
