@@ -11,13 +11,15 @@ import Error from './Pages/Error';
 
 
 
-import './App.css';
+
+
 
 
 function App() {
   return (
     <>
-   <Routes >
+    
+   <Routes>
    <Route path='/' element={<Login />}></Route>
    <Route path='/signup' element={<Signup />}></Route>
    <Route path='/home' element={<Home />}></Route>
@@ -26,7 +28,7 @@ function App() {
    <Route path='/menu' element={<MenuPage />}></Route>
    <Route path='/reservation' element={<ReservationView />}></Route>
    <Route path="/*" element={<Error />}></Route>
-   </Routes >
+   </Routes>
    </>
    
   );

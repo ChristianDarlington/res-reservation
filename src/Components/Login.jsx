@@ -5,13 +5,15 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import { Link as RouterLink } from 'react-router-dom';
+import Link from '@mui/material/Link';
 
 function Copyright(props) {
   return (
@@ -68,7 +70,7 @@ export default function SignInSide() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 8, bgcolor: 'black' , p: 3}}>
+            <Avatar sx={{ m: 4, bgcolor: 'black' , p: 3}}>
               <LockOutlinedIcon/>
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -99,14 +101,16 @@ export default function SignInSide() {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
+              <RouterLink to="/home">
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 4, mb: 9, p:1 }}
+                sx={{ mt: 4, mb: 4, p:1 }}
               >
                 Sign In
               </Button>
+              </RouterLink>
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
@@ -114,8 +118,10 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link>
+                  <RouterLink to="/signup" href="#" variant="body2">
                     {"Don't have an account? Sign Up"}
+                  </RouterLink>
                   </Link>
                 </Grid>
               </Grid>
