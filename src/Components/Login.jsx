@@ -100,6 +100,7 @@ export default function SignInSide() {
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
+                sx={{mt: 2}}
               />
               <RouterLink to="/home">
               <Button
@@ -125,7 +126,7 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 28 }} />
+              <Copyright sx={{ mt: 20 }} />
             </Box>
           </Box>
         </Grid>
