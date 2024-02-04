@@ -1,31 +1,56 @@
+import {useEffect, useState} from 'react';
 import React from 'react'
 import Navbar from "../Components/Navbar"
-import {useEffect, useState} from 'react';
+
 
 const MenuPage = () => {
-const [data, setData] = useState("");
+
+  const [data, setData] = useState("");
 
   const URL = 'https://api.sampleapis.com/wines/rose'
 
-  console.log('hello')
-
   const getData = async () => {
-    const resp = await fetch(URL);
-    const json = await resp.json();
-    setData(json);
-    console.log(data)
+    try {
+      const resp = await fetch(URL);
+      const json = await resp.json();
+      setData(json);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   }
 
   useEffect(() => {
-    getData();
+    getData(); 
   }, []);
+
+  useEffect(() => {
+    console.log(data)
+  }, []); // This effect runs whenever 'data' changes
 
   return (
     <>
       <Navbar />
-    <div className='text-white flex items-center justify-center'>
-      <h1 className='font-bold'>Menu</h1>
-     
+      <div className=' text-white flex items-center justify-center'>
+       
+      {/* Check if items exist */}
+      {data ? (
+        <div>
+          {/* Render items */}
+          <ul>
+            {data.map((item, index) => (
+              <li key={index}>
+                {/* Render each item, including an <img> tag */}
+                <div className='font-bold'>
+                  <p>{item.wine}</p> {/* Assuming item has a 'name' property */}
+                  <img src={item.image} alt={item.name}/> {/* Assuming item has an 'imageUrl' property */}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <p>No items to display</p>
+      )}
     </div>
     </>
   )

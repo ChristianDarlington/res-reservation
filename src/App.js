@@ -8,14 +8,11 @@ import ReservationView from './Pages/ReservationView';
 import MenuPage from './Pages/MenuPage';
 import Error from './Pages/Error';
 
-
-
-
-
-
-
-
 function App() {
+
+ 
+ 
+
   return (
     <>
     
